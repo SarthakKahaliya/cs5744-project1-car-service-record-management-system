@@ -1,0 +1,1160 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>SDQ Project 1</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <style>
+        ul.horizontal {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        ul.horizontal li {
+            float: left;
+        }
+
+        ul.horizontal li a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.horizontal li a:hover:not(.active) {
+            background-color: cyan;
+            color: black;
+        }
+
+        ul.horizontal li a.active {
+            background-color: #04AA6D;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sticky-top">
+
+        <div class="w3-col m8">
+            <ul class="horizontal">
+                <li><a class="navbar-brand" href="index.html">SDQ Project 1</a></li>
+                <li><a href="index.html">Background</a></li>
+                <li><a href="useCases.html">Use Cases</a></li>
+                <li><a href="requirements.html">Requirements</a></li>
+                <li><a href="highLevelDesign.html">High-Level Design</a></li>
+                <li><a href="designRationale.html">Design Rationale</a></li>
+                <li><a href="conclusion.html">Conclusion</a></li>
+                <li><a class="active" href="complete.html">Full Text</a></li>
+                <li class="rightli" style="float:right"><a href="index.html">Sarthak K., Sarthak V., Mehul B., Priyanshi
+                        S.</a></li>
+            </ul>
+            <br>
+        </div>
+
+        <main class="container">
+
+            <h1 style="text-align: center; padding: .5em 0 .75em 0"><b><u>Car Service Record Management System
+                    </u></b></h1>
+            <h3>Background</h3>
+            <br>
+            <div class="col-md-12">
+
+                <p style="text-align: justify">
+                    On average, over 6 million passenger car accidents occur in the United States each year, and in
+                    the United States, there are around 239,100 auto repair and maintenance facilities. The data
+                    shows us that consumers in the United States spent a total of 194.9 billion dollars on services
+                    for their motor vehicles in 2021. This data is maintained by numerous third-party vendors and
+                    insurance firms, which may result in inaccurate or fragmented data. Therefore, a central system
+                    All the data that can be readily maintained is required. Our plan is to create a system that
+                    keeps track of auto maintenance, which will be helpful when buying or selling a certain car to
+                    learn more about it and its condition. This technology will assist in keeping track of data
+                    regarding used or accident-damaged vehicles. The idea of this project originated when one of
+                    our teammates had to solve this problem during an interview for a full-time software engineer
+                    Role.
+                    <br> <br>
+
+                    We believe that the issues raised in the real-world scenario will be addressed by this project.
+                    Additionally, we think that there aren't any trustworthy mechanisms in place for keeping track
+                    of car maintenance records, which could affect both the price of a car overall and potential
+                    Buyers.
+                    <br>
+                    <br>
+
+                    Without the appropriate architecture, the system is a little too complex to handle, and as more
+                    work proceeds, the complexity will only grow, making it more challenging to add new features,
+                    make adjustments, and optimize the code. The system's performance, scalability, usability, and
+                    manageability will all be directly impacted by the architecture, which will help define the
+                    system's overall integrity. We also need our system to have module-to-module interaction, data
+                    abstraction, and some additional functionality, and in order to do so, it is very important for us
+                    to pick the right architectural style.
+                    <br> <br>
+
+                </p>
+                <div style="display: flex; justify-content: center">
+                    <img style="height: 66%" class="col-md-8" src="./img/car-workshop.jpeg">
+                </div>
+                <div style="display: flex; justify-content: center">
+                    <pre><i>(Figure 1)</i> Car Workshop</pre>
+                </div>
+
+
+            </div>
+
+            <h3>Use Cases</h3>
+            <br>
+            <div class="col-md-12">
+
+                <p>
+                    The general public, insurance firms, and automobile manufacturing businesses are going to be the
+                    ones to utilize this system to keep track of car servicing information. First and foremost,
+                    everyone
+                    who is interested in purchasing a pre-owned automobile wants to make sure that they are
+                    receiving a
+                    good bargain on the vehicle. The insurance companies are the secondary users of this system.
+                    Then,
+                    before determining the rate for the car insurance, the insurance company would verify the
+                    history of
+                    the vehicle. Furthermore, the automobile manufacturing companies will manage the inventory for
+                    the
+                    various vehicle components based on the vehicles' service records.
+                </p>
+
+                <p>
+                <ol>
+                    <li>Sarthak is a new doctoral student who wants to study math as his field of expertise. His
+                        home is
+                        a studio apartment that is located three miles away from the university. Although the local
+                        public transportation is pretty dependable where he moved to, getting around on the
+                        weekends,
+                        when bus frequency is greatly reduced, can be a little bit of a challenge. Because of this,
+                        it
+                        will be difficult to successfully plan all of the events around the bus schedule. But he
+                        does
+                        have another strategy to avoid that consequence. On the other hand, he may anticipate that
+                        his
+                        parents will come to see him during the winter holidays. In that case, he will want to be
+                        able
+                        to drive them to a variety of tourist destinations, so having a car will be of some use to
+                        him
+                        during that time. Given that he is pursuing a doctoral degree and that he is going to stay
+                        here
+                        for a while, another purchase that makes sense for him to make is that of a car. He starts
+                        looking for a new vehicle online and visits a number of different websites. When Sarthak
+                        discovered a deal that appeared to be too good to be true—the seller was trying to sell him
+                        an
+                        expensive car for a cheap price—he started to have some worries about the car's condition.
+                        The
+                        seller was offering to sell him the car for a low price. When it comes to this topic, our
+                        website can be of assistance. With the assistance of this, he will be able to establish
+                        whether
+                        the auto parts are original or not, whether the maintenance was routine or not, the
+                        condition of
+                        the car, and whether or not the automobile will require any prospective future servicing.
+                    </li> <br>
+                    <div style="display: flex; justify-content: center">
+                        <img style="height: 50%" class="col-md-6" src="./img/usecase-1.jpeg">
+                    </div>
+                    <div style="display: flex; justify-content: center">
+                        <pre><i>(Figure 2)</i> Car Data in Records.</pre>
+                    </div>
+                    <div style="display: flex; justify-content: center">
+                        <img style="height: 50%" class="col-md-8" src="./img/user-usecase.png">
+                    </div>
+                    <div style="display: flex; justify-content: center">
+                        <pre><i>(Figure 3)</i> User Use Case Diagram</pre>
+                    </div>
+                    <li>Priyanshi is an analyst that works for a company that specializes in insurance. Every day,
+                        as
+                        part of her job, she looks at the condition of a car to figure out how much the insurance
+                        premium will be. To figure out how much insurance will cost, she has to think about more
+                        than
+                        thirty things, like the car's make, model, and year, as well as its previous owners, any
+                        accidents, any extra features, and any damage to the body. The problem is that she has to
+                        get
+                        all of the information by hand from a number of different third-party vendors and repair
+                        shops.
+                        Also, some data is missing from different places, and the format of the data varies from one
+                        vendor to another. Now, what she needs is a system with a central database that lets her
+                        just
+                        type in the license plate number of the car and see all the information from the database on
+                        the
+                        screen.</li><br>
+                    <div style="display: flex; justify-content: center">
+                        <img style="height: 50%" class="col-md-8" src="./img/insurance-usecase.png">
+                    </div>
+                    <div style="display: flex; justify-content: center">
+                        <pre><i>(Figure 4)</i> Insurance Company Use Case Diagram</pre>
+                    </div>
+
+                    <li>Automakers can view the data and determine which parts require greater maintenance. Rahul,
+                        who
+                        works for an auto parts manufacturer, wants to ensure that his business spends more time and
+                        money producing auto parts that are in high demand than those that are not. He was looking
+                        for a
+                        website that would assist him in making manufacturing decisions because his business was
+                        losing
+                        money because they were producing more headlights than necessary and there were very few
+                        sales
+                        of this component. So they could determine which parts of that specific automobile they
+                        needed
+                        to build in large quantities by using an online tool that Rahul could log into, enter the
+                        car
+                        model, and analyze.
+                    </li>
+                    <div style="display: flex; justify-content: center">
+                        <img style="height: 50%" class="col-md-8" src="./img/manufacturer-usecase.png">
+                    </div>
+                    <div style="display: flex; justify-content: center">
+                        <pre><i>(Figure 5)</i> Car manufacturer Use Case Diagram</pre>
+                    </div>
+                </ol>
+                </p>
+
+
+
+
+            </div>
+
+            <h3>Requirements</h3>
+            <br>
+            <div class="col-md-12">
+                <p>Based on the functionality that we have discussed in the system introduction and the use cases, we
+                    will be setting our requirements. Although the project's focus is only on websites, in the future we
+                    might broaden it to include desktop and mobile applications. The functional and nonfunctional
+                    requirements for this web application are defined below.
+                </p>
+                <div>
+                    <h5><u>Functional Requirements</u></h5>
+                    <p>FR-1: The system should be able to allow general users, admins, car insurance companies,
+                        workshops, and car manufacturer companies to login and sign up.</p>
+                    <p>FR-2: General users should be able to update their personal information.</p>
+                    <p>FR-3:&nbsp;General users should be able to request car information using the car registration
+                        number and owner details.</p>
+                    <p>FR-4: General users should be able to accept or reject any request made to their profile, either
+                        for car information or personal information, from general users or car insurance companies.</p>
+                    <p>FR-5:&nbsp;The system should allow workshops to create, update, or delete maintenance records
+                        created by them.</p>
+                    <p>FR-6:&nbsp;The system should be able to provide car manufacturers with all the car service
+                        records related to their brand and model.</p>
+                    <p>FR-7:&nbsp;The system should be able to generate a PDF of the report so that it can be viewed
+                        offline.</p>
+                    <p>FR-8: Admins should have the ability to register, authorize, or revoke the access of any kind of
+                        user.</p>
+                    <p>FR-9:&nbsp;The system should be able to notify users about the upcoming service date of their
+                        cars.</p>
+                    <p>FR-10: The system should allow insurance companies to request a general user for all their car
+                        and personal information.</p>
+                </div>
+                <br>
+                <div>
+                    <h5><u>Non-Functional Requirements</u></h5>
+                    <p>
+                        NFR-1: The system must be scalable in order to support an expanding user base.
+
+
+                    </p>
+                    <p>
+                        NFR-2: Multiple users looking for information about the same car should be supported by the
+                        system.
+                    </p>
+                    <p>
+                        NFR-3: Different browsers should be able to access the website.
+
+                    </p>
+                    <p>
+                        NFR-4: To enable quick access, the system should store the data in the cloud.
+
+                    </p>
+                    <p>
+                        NFR-5: To provide a quick website load time, numerous servers spread across various locations
+                        are
+                        required.
+
+                    </p>
+                    <p>
+                        NFR-6: To ensure that no data is lost, there should be a data backup.
+
+                    </p>
+                    <p>
+                        NFR-7: The appropriate actions should be taken to guarantee the security of data servers.
+
+                    </p>
+                    <p>
+                        NFR-8: Each page of a website should load in under two seconds.
+
+                    </p>
+                    <p>
+                        NFR-9: The website should be accessible 99.9% of the time.
+                    </p>
+                </div>
+                <br>
+                <div>
+                    <h5><u>Stakeholder Analysis</u></h5>
+                    <style type="text/css">
+                        .tg {
+                            border-collapse: collapse;
+                            border-spacing: 0;
+                        }
+
+                        .tg td {
+                            border-color: black;
+                            border-style: solid;
+                            border-width: 1px;
+                            font-family: Arial, sans-serif;
+                            font-size: 14px;
+                            overflow: hidden;
+                            padding: 10px 5px;
+                            word-break: normal;
+                        }
+
+                        .tg th {
+                            border-color: black;
+                            border-style: solid;
+                            border-width: 1px;
+                            font-family: Arial, sans-serif;
+                            font-size: 14px;
+                            font-weight: normal;
+                            overflow: hidden;
+                            padding: 10px 5px;
+                            word-break: normal;
+                        }
+
+                        .tg .tg-llyw {
+                            background-color: #c0c0c0;
+                            border-color: inherit;
+                            text-align: left;
+                            vertical-align: top
+                        }
+
+                        .tg .tg-0pky {
+                            border-color: inherit;
+                            text-align: left;
+                            vertical-align: top
+                        }
+                    </style>
+                    <table class="tg">
+                        <thead>
+                            <tr>
+                                <th class="tg-llyw"><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Stakeholders</span>
+                                </th>
+                                <th class="tg-llyw"><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">User
+                                        Characteristics</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tg-0pky"><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">User(Car
+                                        Buyer)</span></td>
+                                <td class="tg-0pky"><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Background
+                                        :</span><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none"> </span><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">familiar with
+                                        mobile and web-based applications; familiar with computers and smartphones
+                                    </span><br><br><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Expectations :
+                                    </span><br><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">Users can see the
+                                        details of the car he/she wants to buy, like its history of maintenance, owner
+                                        history, and all the records that are associated with that
+                                        car.</span><br><br><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Preferences:
+                                    </span><br><span style="font-weight:400;font-style:normal;text-decoration:none">The
+                                        user should be able to use the system on desktop and be able to enter the
+                                        details of the system from a keyboard. The website can also be run on mobile so
+                                        that users can use it on their mobiles. They can see all the details and history
+                                        associated with the car they have searched for. They can download the pdf of the
+                                        report so that it can be viewed offline and the user can compare the report with
+                                        what they got from the owner.</span></td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0pky"><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">Insurance
+                                        companies</span></td>
+                                <td class="tg-0pky"><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Background :
+                                    </span><br><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">comfortable with
+                                        both mobile and web-based applications, and conversant with computers and
+                                        smartphones.</span><br><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Expectations:</span><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none"> </span><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">Companies can see
+                                        the details of the car like the maintenance history, how many parts are
+                                        duplicated, and all the other details that can help the company get the right
+                                        amount of insurance premium that they can charge the
+                                        user.</span><br><br><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Preferences
+                                        :</span><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none"> </span><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">They should be
+                                        able to use the system on desktop and be able to enter the details of a car from
+                                        a keyboard. The website can also be run on mobile so that users can use it using
+                                        their mobile. They can see all the details of the car that they searched for and
+                                        also in good format, so it is easy to read. They can extract and download the
+                                        data in such a format that it is easy for the analyst to analyse the insurance
+                                        premium they can charge.</span></td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0pky"><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Repair
+                                        shops</span></td>
+                                <td class="tg-0pky"><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Background :
+                                    </span><br><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">comfortable with
+                                        both mobile and web-based applications and is conversant with computers and
+                                        smartphones.</span><br><br><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Expectations
+                                        :</span><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none"> </span><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">The repair shop
+                                        owner can see the data associated with that car and also update the data of the
+                                        car by using the system so that the data is correct.</span><br><br><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Preferences :
+                                    </span><br><span style="font-weight:400;font-style:normal;text-decoration:none">They
+                                        should be able to use the system on a desktop and be able to enter the details
+                                        of a car from a keyboard. The website can also be run on mobile so that users
+                                        can use it on the go. can see the data associated with the car and also update
+                                        the data with what they have repaired or changed with ease.</span></td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0pky"><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Automobile
+                                        Manufaturing Companies</span></td>
+                                <td class="tg-0pky"><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Background :
+                                    </span><br><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">comfortable with
+                                        both mobile and web-based applications and being conversant with computers and
+                                        smartphones.</span><br><br><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Expectations :
+                                    </span><br><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">Automobile
+                                        manufacturing employees should be able to enter the information about a car
+                                        model and then be able to see the details regarding the parts that are being
+                                        worn out the most.</span><br><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Preferences
+                                        :</span><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none"> </span><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">They should be
+                                        able to use the system on desktop and can enter the details of a car from a
+                                        keyboard. The website should also be able to run on mobile so that they can use
+                                        it while on the go. can see the data associated with the car of a particular
+                                        model in order to get the details about its parts.</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+
+
+            </div>
+
+            <h3>High-Level Design</h3>
+            <br>
+            <div class="col-md-12">
+
+                <p>
+                <h5><u>System Architecture</u></h5>
+                Based on the system's requirements, we identified five main components. The database, REST API
+                (authentication module, DAO Module, and Request Handler Module), and The five core components are
+                the
+                five core components. Each of these components belongs to one of three tiers in a multi-tier design.
+                The
+                data tier is in charge of data storage and retrieval. The database module is included in this tier.
+                All
+                business logic, including permission and access control, is handled by the application tier. This
+                tier
+                is made up entirely of the REST API, which is made up of the Authentication module, the DAO module,
+                and
+                the Request Handler module. The presentation tier serves as the system's external interface. The web
+                application is part of this tier. In the presentation tier, the web application talks to the REST
+                API
+                modules in the application tier, and the REST API talks to the database module in the data tier.
+
+                </p>
+                <div style="display: flex; justify-content: center">
+                    <img style="height: 66%" class="col-md-8" src="./img/overview.jpeg">
+                </div>
+                <div style="display: flex; justify-content: center">
+                    <pre><i>(Figure 6)</i> Overview of our system</pre>
+                </div>
+                <br>
+                <p>
+                    It is important for us to define modules in a way such that the application behaves in a cohesive
+                    manner and performs all the functionalities. The basic workflow of this application is as follows:
+                <ul>
+                    <li>Request Handler module: This module is responsible for handling the requests made by the client
+                        and validating them by either giving an invalid request response or continuing processing the
+                        requests.
+                    </li>
+                    <li>Authentication module: This module is responsible for authenticating the clients. This will make
+                        sure only certain users are given the permission to edit or update certain data on the website.
+                        Whenever a user tries to log into the website, they will first be authenticated, and then they
+                        will be logged in.
+                    </li>
+                    <li>
+                        DAO module: This module is responsible for connecting the database module through any request
+                        that is made. This module contains all the queries that will fetch all the data from the
+                        database. This is the only module that will connect to the database.
+
+                    </li>
+                    <li>
+                        Database: This module is responsible for providing all the functionalities of a database to the
+                        website. When a user requests a service, the website will pull up data that is stored in our
+                        database and display it to the user.
+
+                    </li>
+                </ul>
+
+
+
+                </p>
+                <br>
+                <div>
+                    <h5><u>Database design</u></h5>
+                    <div>
+                        <p>
+                            Databases are an important part of every web application because they provide the
+                            application
+                            with the ability to retrieve, store and handle all the data. There are several popular types
+                            of
+                            databases: relational, key-value, and document based with their own benefits and drawbacks.
+                            Relational databases are used to store the structured data.
+                        </p>
+                        <p>
+                            The primary key for the majority of the entities defined in the data model will be a number.
+                            This identifier will be produced automatically by the database and won't reveal any extra
+                            information about the entity it represents. Using the IDs and a foreign key constraint,
+                            certain
+                            entities will relate to other entities. Additional restrictions will be set to enforce
+                            unique
+                            rules that will be defined for certain of the data stored in the system to ensure data
+                            integrity. Lastly, effective data retrieval is required. We shall define the necessary data
+                            indices for this.
+                            We will choose Azure SQL database service to host databases due to its superior cost and
+                            performance in comparison to other cloud providers.
+                        </p>
+                    </div>
+                    <div style="display: flex; justify-content: center">
+                        <img style="height: 66%" class="col-md-12" src="./img/database-structure.png">
+                    </div>
+                    <div style="display: flex; justify-content: center">
+                        <pre><i>(Figure 7)</i> Database Design</pre>
+                    </div>
+                </div>
+                <div>
+                    <h5><u> Web Application Design
+                        </u></h5>
+                    <div>
+                        <p>
+                            Using the SPA approach has a number of benefits. The first is that, since only one page is
+                            used
+                            and is rewritten based on what the user does, the page does not need to be reloaded when
+                            switching between pages. This keeps the user experience smooth and makes it work like a
+                            normal
+                            desktop app. Additionally, the web page only loads once, and any additional code (such as
+                            HTML,
+                            CSS, or JavaScript) is only loaded when the user interacts with the page or as needed. This
+                            will
+                            make page loads faster and reduce the overall load on the server, which will make the user
+                            experience better and meet NFR-8.
+                        </p>
+                        <p>
+                            React, a JavaScript toolkit for making user interfaces (the "view layer"), will be used to
+                            make
+                            the application's front end. The program will be divided into a number of independent,
+                            self-contained modules, which will speed up development and make it simple to reuse
+                            components
+                            across the entire application. React employs a virtual DOM, which makes loading multiple
+                            views
+                            quick and efficient. It also lets apps run smoothly on a variety of platforms and devices,
+                            including mobile, which will also be a key part of our system. We will also use Redux
+                            because it
+                            will be hard to keep track of all the different states of our complex and large application.
+                            Managing application state is easy with Redux, an open-source JavaScript toolkit that is
+                            incredibly lightweight. This will help us to make sure that we are always providing the user
+                            with accurate information and that the program is responding appropriately to user input.
+                        </p>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <h5><u>Backend Design</u></h5>
+                    <p>
+                        For the backend we are using the REST API which will be crucial to the system's operation. It
+                        will provide a common language for dealing with the data and house the majority of the system's
+                        business logic.
+
+                    </p>
+                    <p>
+                    <h6>DAO</h6>
+                    DAOs help setting up the database connection and interacting with it by sending SQL CRUD
+                    commands.They also communicate with the clients to provide and obtain data.
+
+                    </p>
+                    <p>
+
+                    <div style="display: flex; justify-content: center">
+                        <img style="height: 66%" class="col-md-12" src="./img/car-manufacturer.png">
+                    </div>
+                    <div style="display: flex; justify-content: center">
+                        <pre><i>(Figure 8)</i>Car manufacturer Sequence Diagram</pre>
+                    </div>
+                    As we can see in the sequence diagram above, the car manufacturer client will interact with the
+                    web application when it tries to request login. The request handler will handle the request
+                    login information by authenticating the client and then validates the login by authenticating
+                    it. The authenticating module will send the request to DAO module will check if the email or
+                    password entered by the user is valid or not and then relates the status to request handler.
+                    Now, the car manufacturer client can enter the model of the car they want an information about
+                    and the request handler will send this request to REST API will send this request to DAO module.
+                    After receiving data from the database, DAO creates a model object or a list of model objects.
+                    Finally, DAO returns the model object(s) created to the client
+
+                    </p>
+
+                    <p>
+
+                    <div style="display: flex; justify-content: center">
+                        <img style="height: 66%" class="col-md-12" src="./img/insurance-company.png">
+                    </div>
+                    <div style="display: flex; justify-content: center">
+                        <pre><i>(Figure 9)</i> Insurance Company Sequence Diagram</pre>
+                    </div>
+                    In the sequence diagram above, the Insurance company client will interact with the web
+                    application when it tries to request login. The request handler will handle the request login
+                    information by authenticating the client and then validates the login by authenticating it. The
+                    authenticating module will send the request to DAO module will check if the email or password
+                    entered by the user is valid or not and then relates the status to request handler. Now, the
+                    insurance company client wil want information about different cars in order to decide the car
+                    insurance and for that they can enter the model of the car they want an information about and
+                    the REST API will send this request to DAO module. After receiving data from the database, DAO
+                    creates a model object or a list of model objects. Finally, DAO returns the model object(s)
+                    created to the client.
+                    </p>
+
+                    <p>
+
+                    <div style="display: flex; justify-content: center">
+                        <img style="height: 66%" class="col-md-12" src="./img/admin.png">
+                    </div>
+                    <div style="display: flex; justify-content: center">
+                        <pre><i>(Figure 10)</i> Admin Sequence Diagram</pre>
+                    </div>
+                    In case of Admin Client, the admin will be able to login into the system and our website will
+                    authenticate this using the authenticate module provided in our website. Main functionality of
+                    Admin will be approving, authorizing and unauthorizing the different clients. Only he is given
+                    this access to update changes regarding this. The admin can enter the new details and request
+                    the changes to be made via the REST APIs and the DAO module will form a connection with the
+                    database to make these changes using UPDATE statement and the INSERT statements. And after the
+                    changes have been made a message will be displayed on the screen informing the admin in the form
+                    of model object(s).
+
+
+                    </p>
+
+                    <p>
+                    <div style="display: flex; justify-content: center">
+                        <img style="height: 66%" class="col-md-12" src="./img/general-user.png">
+                    </div>
+                    <div style="display: flex; justify-content: center">
+                        <pre><i>(Figure 11)</i> General User Sequence Diagram</pre>
+                    </div>
+                    In the sequence diagram above, the user will interact with the web application when it tries to
+                    request login. The request handler will handle the request login information by authenticating
+                    the client and then validates the login by authenticating it. The authenticating module will
+                    send the request to DAO module will check if the email or password entered by the user is valid
+                    or not and then relates the status to request handler. Now, the user can search the information
+                    about any model of any car by entering the model name and registration number of that particular
+                    vehicle. The corresponding information will be displayed on the screen and the user can also
+                    download pdf of the same if the requirement be.
+
+                    </p>
+
+                    <p>
+
+                    <div style="display: flex; justify-content: center">
+                        <img style="height: 66%" class="col-md-12" src="./img/workshop.png">
+                    </div>
+                    <div style="display: flex; justify-content: center">
+                        <pre><i>(Figure 12)</i> Workshop Sequence Diagram</pre>
+                    </div>
+
+                    In case of Workshop Owner Client, the user will be able to login into the system and our website
+                    will authenticate this using the authenticate module provided in our website. Main functionality of
+                    workshop owner will be adding, updating changes about the car maintenance records. The owner can
+                    enter the new details and request the changes to be made via the REST APIs and the DAO module will
+                    form a connection with the database to make these changes using UPDATE statement, INSERT statements
+                    and the SELECT statement. And after the changes have been made a message will be displayed on the
+                    screen informing the admin in the form of model object(s).
+                    </p>
+
+                </div>
+                <div>
+                    <h5>Traceability Matrix</h5>
+                    <br>
+                    <h6><u>Functional Requirement Traceability Matrix</u></h6>
+                    <br>
+
+                    <style type="text/css">
+                        .tg {
+                            border-collapse: collapse;
+                            border-spacing: 0;
+                        }
+
+                        .tg td {
+                            border-color: black;
+                            border-style: solid;
+                            border-width: 1px;
+                            font-family: Arial, sans-serif;
+                            font-size: 14px;
+                            overflow: hidden;
+                            padding: 10px 5px;
+                            word-break: normal;
+                        }
+
+                        .tg th {
+                            border-color: black;
+                            border-style: solid;
+                            border-width: 1px;
+                            font-family: Arial, sans-serif;
+                            font-size: 14px;
+                            font-weight: normal;
+                            overflow: hidden;
+                            padding: 10px 5px;
+                            word-break: normal;
+                        }
+
+                        .tg .tg-baqh {
+                            text-align: center;
+                            vertical-align: top
+                        }
+
+                        .tg .tg-0lax {
+                            text-align: left;
+                            vertical-align: top
+                        }
+                    </style>
+                    <table class="tg" style="table-layout: fixed;">
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="tg-0lax"></th>
+                                <th class="tg-baqh"><span style="font-weight:bold">Web Application Component</span></th>
+                                <th class="tg-baqh"><span style="font-weight:bold">Authentication Module</span></th>
+                                <th class="tg-baqh"><span style="font-weight:bold">Request Handler</span></th>
+                                <th class="tg-baqh"><span style="font-weight:bold">Database Component</span></th>
+                                <th class="tg-baqh"><span style="font-weight:bold">Additional Services (Azure)</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tg-0lax"><span style="font-weight:bold">FR-1</span></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh"></td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0lax"><span style="font-weight:700;font-style:normal">FR-2</span></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh"></td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0lax"><span style="font-weight:700;font-style:normal">FR-3</span></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh"></td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0lax"><span style="font-weight:700;font-style:normal">FR-4</span></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh"></td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0lax"><span style="font-weight:700;font-style:normal">FR-5</span><br></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh"></td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0lax"><span style="font-weight:700;font-style:normal">FR-6</span></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh"></td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0lax"><span style="font-weight:700;font-style:normal">FR-7</span></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh">X</td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0lax"><span style="font-weight:700;font-style:normal">FR-8</span></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh"></td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0lax"><span style="font-weight:700;font-style:normal">FR-9</span></td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0lax"><span style="font-weight:700;font-style:normal">FR-10</span></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <br>
+                    <h6><u>Non-Functional Requirement Traceability Matrix</u></h6>
+                    <br>
+
+                    <style type="text/css">
+                        .tg {
+                            border-collapse: collapse;
+                            border-spacing: 0;
+                        }
+
+                        .tg td {
+                            border-color: black;
+                            border-style: solid;
+                            border-width: 1px;
+                            font-family: Arial, sans-serif;
+                            font-size: 14px;
+                            overflow: hidden;
+                            padding: 10px 5px;
+                            word-break: normal;
+                        }
+
+                        .tg th {
+                            border-color: black;
+                            border-style: solid;
+                            border-width: 1px;
+                            font-family: Arial, sans-serif;
+                            font-size: 14px;
+                            font-weight: normal;
+                            overflow: hidden;
+                            padding: 10px 5px;
+                            word-break: normal;
+                        }
+
+                        .tg .tg-baqh {
+                            text-align: center;
+                            vertical-align: top
+                        }
+
+                        .tg .tg-0lax {
+                            text-align: left;
+                            vertical-align: top
+                        }
+                    </style>
+                    <table class="tg" style="table-layout: fixed;">
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="tg-0lax"></th>
+                                <th class="tg-baqh"><span style="font-weight:bold">Web Application Component</span></th>
+                                <th class="tg-baqh"><span style="font-weight:bold">Authentication Module</span></th>
+                                <th class="tg-baqh"><span style="font-weight:bold">Request Handler</span></th>
+                                <th class="tg-baqh"><span style="font-weight:bold">Database Component</span></th>
+                                <th class="tg-baqh"><span style="font-weight:bold">Additional Services (Azure)</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tg-0lax"><span style="font-weight:bold">NFR-1</span></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0lax"><span style="font-weight:700;font-style:normal">NFR-2</span></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh"></td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0lax"><span style="font-weight:700;font-style:normal">NFR-3</span></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh"></td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0lax"><span style="font-weight:700;font-style:normal">NFR-4</span></td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0lax"><span style="font-weight:700;font-style:normal">NFR-5</span><br>
+                                </td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0lax"><span style="font-weight:700;font-style:normal">NFR-6</span></td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh"></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0lax"><span style="font-weight:700;font-style:normal">NFR-7</span></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0lax"><span style="font-weight:700;font-style:normal">NFR-8</span></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0lax"><span style="font-weight:700;font-style:normal">NFR-9</span></td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                                <td class="tg-baqh">X</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+            </div>
+
+            <h3>Design Rationale</h3>
+            <br>
+            <div class="col-md-12">
+
+                <p>
+                <h4>System Architecture Rationale</h4>
+                We have explained or pointed to a good deal of the thinking that went into a good number of the design
+                choices throughout the entirety of this material. At the highest possible level, our primary concerns
+                are the following: the data that the system needs to manage and store; the business logic; and an
+                interface to the system. There is a distinct pattern emerging here for a layered architectural design.
+                When we use a layered or three-tier architecture, we can take advantage of the following benefits:
+                <ul>
+                    <li>
+                        It uses an architecture that has been proven to work for contemporary web apps.
+                    </li>
+                    <li>
+                        Separate layers make subsequent expansion less difficult. (that is, a single REST API may be
+                        utilized by
+                        a number of different front-end applications).
+                    </li>
+                    <li>
+                        Separation of code makes both development and maintenance much simpler.
+                    </li>
+                    <li>
+                        Scalability can be controlled separately by components.
+                    </li>
+                </ul>
+
+
+                </p>
+
+                <p>
+                <h4>Database Design Rationale</h4>
+                <p>The relational database model is the one that we choose to use for the storage of the system&apos;s
+                    structured data. The main things that led to this conclusion were the level of development that
+                    relational databases reached and the ACID (atomicity, consistency, isolation, and durability)
+                    properties of these databases. In the end, what this comes down to is making sure that the data that
+                    is stored in the system is completely trustworthy.</p>
+                <p>We chose Azure SQL database service as our database platform because it can both run in the cloud and
+                    meet the need to standardize on a single platform. By using SQL standards, it may be possible to
+                    build the database without being tied to a specific database management system.Azure SQL database
+                    service platform is low-cost, scalable.</p>
+
+                </p>
+                <h4>Web Application Design Rationale</h4>
+                <p>The tech stack that we will be using for this will be React, HTML, JS, Java, and MySQL. A few
+                    significant advantages of developing the application as an Single Page Application (SPA) deliverable
+                    are - CDN can be used to develop and deploy the application, which will speed up the loading of
+                    HTML,
+                    JS,
+                    and other resources;
+                    we may create the user interface with React in manageable, reusable modules.<br><br>
+                    An alternative to our approach would be a more conventional web application such as using PHP, in
+                    which requests are
+                    made
+                    to a server, the pages are created, and then the user is redirected to them. With such a strategy,
+                    the loading of the Pages will be slower as we
+                    would need to connect our frontend application with the REST API application and extra
+                    resources will be required
+                    to handle the entire stack. The SPA strategy best meets our needs due to these
+                    factors.
+                </p>
+
+                <div>
+                    <h4>Backend Design Rationale</h4>
+                    <p>
+                        The REST API is a critical component of our system. It decouples data storage from the user
+                        interface. Due to the separation, it is easier to run our front end and back end on different
+                        servers. This is not a requirement of our system, but the REST API gives us this freedom.
+                        Meanwhile,
+                        it allows other third-party apps to use our database's data for their own creations. Each
+                        application will run alone, with no interference from the others. Furthermore, it makes no
+                        difference what language the third-party developers are using.
+
+                    </p>
+
+                    <p>
+                        They can use our service in the same way regardless of whether they have Python, Java, or PHP.
+                        Also,
+                        the separation will make it easier for different development teams to work on different parts of
+                        the
+                        system when we start making and putting it into action.
+
+                    </p>
+
+                    <p>
+                        Our REST API will be built using Java and the DAO (Data Access Object) design pattern. It will
+                        be
+                        object-oriented and based on the design pattern. As explained in the high-level design section
+                        (the
+                        data access layer), DAO abstracts and wraps all data-related actions into a single layer. DAOs
+                        are
+                        the only objects that interact directly with the database. As a result, if the structure of our
+                        database changes, it will only affect the methods implemented within the DAO classes.
+
+                    </p>
+
+                    <p>
+                        The DAO design pattern follows "coding to the interface," which is one of the best ways to write
+                        object-oriented code. The interface is the foundation of the DAO pattern. Other sections of the
+                        REST API concentrate on what each DAO does rather than how it does it. Within DAO classes, the
+                        implementation is free to alter as long as it provides the same functionality. This loosens the
+                        coupling between each component and better prepares us for future adjustments. Another benefit
+                        of using the DAO style is that the JUnit tests run faster. Because all data access is wrapped up
+                        in DAO classes, test data, often known as "mock data," can be used. In essence, the main
+                        benefits of the DAO pattern are the separation of roles and the loose connections between them.
+                        Because user demands Because science and technology are constantly evolving, this feature will
+                        make it easier for our system to accommodate changes.
+
+                    </p>
+                </div>
+
+
+            </div>
+
+            <h3>Conclusion</h3>
+            <br>
+            <div class="col-md-12">
+                <p>
+                    The Car Service Record Management System is a system that is dedicated to users who want to get the
+                    details of the car that they want to buy, insurance companies that want to decide the insurance
+                    premium that they can charge, so they can decide that based on the data that they can get from the
+                    report of the car. Workshop owners can get the details of the part that is related to the car so
+                    they can fix that with ease as they have all the history of the car. Also, with the help of the
+                    data, factory owners can decide which particular part is in demand so they can produce that more and
+                    whichever part is in less demand, they can produce less. The system has 4 modules, i.e., the Request
+                    handler module, Authentication module, DAO module, and database module, which will handle different
+                    queries and output the appropriate results. The architecture that we followed for this project is
+                    layered architecture. A layered architecture will give us flexibility, maintainability, and
+                    scalability for the application and will provide easy reuse of the components. With the help of
+                    layered architecture, it's easy to keep these logical levels and parts focused on different things.
+                </p>
+            </div>
+
+            <div style="display: flex; justify-content: flex-start">
+                <a href="conclusion.html">Previous: Conclusion</a>
+            </div>
+        </main>
+</body>
+
+</html>
