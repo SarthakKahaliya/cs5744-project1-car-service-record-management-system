@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>SDQ Project 1</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <style>
+        ul.horizontal {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        ul.horizontal li {
+            float: left;
+        }
+
+        ul.horizontal li a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.horizontal li a:hover:not(.active) {
+            background-color: cyan;
+            color: black;
+        }
+
+        ul.horizontal li a.active {
+            background-color: #04AA6D;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sticky-top">
+        <div class="w3-col m8">
+            <ul class="horizontal">
+                <li><a class="navbar-brand" href="index.html">SDQ Project 1</a></li>
+                <li><a href="index.html">Background</a></li>
+                <li><a href="useCases.html">Use Cases</a></li>
+                <li><a href="requirements.html">Requirements</a></li>
+                <li><a href="highLevelDesign.html">High-Level Design</a></li>
+                <li><a href="designRationale.html">Design Rationale</a></li>
+                <li><a class="active" href="conclusion.html">Conclusion</a></li>
+                <li class="rightli" style="float:right"><a href="index.html">Sarthak K., Sarthak V., Mehul B., Priyanshi
+                        S.</a></li>
+            </ul>
+            <br>
+        </div>
+
+        <main class="container">
+
+            <h1 style="text-align: center; padding: .5em 0 .75em 0"><b><u>Car Service Record Management System
+                    </u></b></h1>
+            <h3>Conclusion</h3>
+
+            <div class="col-md-12">
+                <p>
+                    The Car Service Record Management System is a system that is dedicated to users who want to get the
+                    details of the car that they want to buy, insurance companies that want to decide the insurance
+                    premium that they can charge, so they can decide that based on the data that they can get from the
+                    report of the car. Workshop owners can get the details of the part that is related to the car so
+                    they can fix that with ease as they have all the history of the car. Also, with the help of the
+                    data, factory owners can decide which particular part is in demand so they can produce that more and
+                    whichever part is in less demand, they can produce less. The system has 4 modules, i.e., the Request
+                    handler module, Authentication module, DAO module, and database module, which will handle different
+                    queries and output the appropriate results. The architecture that we followed for this project is
+                    layered architecture. A layered architecture will give us flexibility, maintainability, and
+                    scalability for the application and will provide easy reuse of the components. With the help of
+                    layered architecture, it's easy to keep these logical levels and parts focused on different things.
+                </p>
+
+                <div style="display: flex; justify-content: flex-start">
+                    <a href="designRationale.html">Previous: Design Rationale</a>
+                </div>
+            </div>
+        </main>
+</body>
+
+</html>

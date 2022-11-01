@@ -1,0 +1,332 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>SDQ Project 1</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <style>
+        ul.horizontal {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        ul.horizontal li {
+            float: left;
+        }
+
+        ul.horizontal li a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.horizontal li a:hover:not(.active) {
+            background-color: cyan;
+            color: black;
+        }
+
+        ul.horizontal li a.active {
+            background-color: #04AA6D;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sticky-top">
+        <div class="w3-col m8">
+            <ul class="horizontal">
+                <li><a class="navbar-brand" href="index.html">SDQ Project 1</a></li>
+                <li><a href="index.html">Background</a></li>
+                <li><a href="useCases.html">Use Cases</a></li>
+                <li><a class="active" href="requirements.html">Requirements</a></li>
+                <li><a href="highLevelDesign.html">High-Level Design</a></li>
+                <li><a href="designRationale.html">Design Rationale</a></li>
+                <li><a href="conclusion.html">Conclusion</a></li>
+                <li class="rightli" style="float:right"><a href="index.html">Sarthak K., Sarthak V., Mehul B., Priyanshi
+                        S.</a></li>
+            </ul>
+            <br>
+        </div>
+
+        <main class="container">
+
+            <h1 style="text-align: center; padding: .5em 0 .75em 0"><b><u>Car Service Record Management System
+                    </u></b></h1>
+            <h3>Requirements</h3>
+            <br>
+            <div class="col-md-12">
+                <p>Based on the functionality that we have discussed in the system introduction and the use cases, we
+                    will be setting our requirements. Although the project's focus is only on websites, in the future we
+                    might broaden it to include desktop and mobile applications. The functional and nonfunctional
+                    requirements for this web application are defined below.
+                </p>
+                <div>
+                    <h5><u>Functional Requirements</u></h5>
+                    <p>FR-1: The system should be able to allow general users, admins, car insurance companies,
+                        workshops, and car manufacturer companies to login and sign up.</p>
+                    <p>FR-2: General users should be able to update their personal information.</p>
+                    <p>FR-3:&nbsp;General users should be able to request car information using the car registration
+                        number and owner details.</p>
+                    <p>FR-4: General users should be able to accept or reject any request made to their profile, either
+                        for car information or personal information, from general users or car insurance companies.</p>
+                    <p>FR-5:&nbsp;The system should allow workshops to create, update, or delete maintenance records
+                        created by them.</p>
+                    <p>FR-6:&nbsp;The system should be able to provide car manufacturers with all the car service
+                        records related to their brand and model.</p>
+                    <p>FR-7:&nbsp;The system should be able to generate a PDF of the report so that it can be viewed
+                        offline.</p>
+                    <p>FR-8: Admins should have the ability to register, authorize, or revoke the access of any kind of
+                        user.</p>
+                    <p>FR-9:&nbsp;The system should be able to notify users about the upcoming service date of their
+                        cars.</p>
+                    <p>FR-10: The system should allow insurance companies to request a general user for all their car
+                        and personal information.</p>
+                </div>
+                <br>
+                <div>
+                    <h5><u>Non-Functional Requirements</u></h5>
+                    <p>
+                        NFR-1: The system must be scalable in order to support an expanding user base.
+
+
+                    </p>
+                    <p>
+                        NFR-2: Multiple users looking for information about the same car should be supported by the
+                        system.
+                    </p>
+                    <p>
+                        NFR-3: Different browsers should be able to access the website.
+
+                    </p>
+                    <p>
+                        NFR-4: To enable quick access, the system should store the data in the cloud.
+
+                    </p>
+                    <p>
+                        NFR-5: To provide a quick website load time, numerous servers spread across various locations
+                        are
+                        required.
+
+                    </p>
+                    <p>
+                        NFR-6: To ensure that no data is lost, there should be a data backup.
+
+                    </p>
+                    <p>
+                        NFR-7: The appropriate actions should be taken to guarantee the security of data servers.
+
+                    </p>
+                    <p>
+                        NFR-8: Each page of a website should load in under two seconds.
+
+                    </p>
+                    <p>
+                        NFR-9: The website should be accessible 99.9% of the time.
+                    </p>
+                </div>
+                <br>
+                <div>
+                    <h5><u>Stakeholder Analysis</u></h5>
+                    <style type="text/css">
+                        .tg {
+                            border-collapse: collapse;
+                            border-spacing: 0;
+                        }
+
+                        .tg td {
+                            border-color: black;
+                            border-style: solid;
+                            border-width: 1px;
+                            font-family: Arial, sans-serif;
+                            font-size: 14px;
+                            overflow: hidden;
+                            padding: 10px 5px;
+                            word-break: normal;
+                        }
+
+                        .tg th {
+                            border-color: black;
+                            border-style: solid;
+                            border-width: 1px;
+                            font-family: Arial, sans-serif;
+                            font-size: 14px;
+                            font-weight: normal;
+                            overflow: hidden;
+                            padding: 10px 5px;
+                            word-break: normal;
+                        }
+
+                        .tg .tg-llyw {
+                            background-color: #c0c0c0;
+                            border-color: inherit;
+                            text-align: left;
+                            vertical-align: top
+                        }
+
+                        .tg .tg-0pky {
+                            border-color: inherit;
+                            text-align: left;
+                            vertical-align: top
+                        }
+                    </style>
+                    <table class="tg">
+                        <thead>
+                            <tr>
+                                <th class="tg-llyw"><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Stakeholders</span>
+                                </th>
+                                <th class="tg-llyw"><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">User
+                                        Characteristics</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tg-0pky"><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">User(Car
+                                        Buyer)</span></td>
+                                <td class="tg-0pky"><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Background
+                                        :</span><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none"> </span><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">familiar with
+                                        mobile and web-based applications; familiar with computers and smartphones
+                                    </span><br><br><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Expectations :
+                                    </span><br><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">Users can see the
+                                        details of the car he/she wants to buy, like its history of maintenance, owner
+                                        history, and all the records that are associated with that
+                                        car.</span><br><br><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Preferences:
+                                    </span><br><span style="font-weight:400;font-style:normal;text-decoration:none">The
+                                        user should be able to use the system on desktop and be able to enter the
+                                        details of the system from a keyboard. The website can also be run on mobile so
+                                        that users can use it on their mobiles. They can see all the details and history
+                                        associated with the car they have searched for. They can download the pdf of the
+                                        report so that it can be viewed offline and the user can compare the report with
+                                        what they got from the owner.</span></td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0pky"><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">Insurance
+                                        companies</span></td>
+                                <td class="tg-0pky"><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Background :
+                                    </span><br><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">comfortable with
+                                        both mobile and web-based applications, and conversant with computers and
+                                        smartphones.</span><br><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Expectations:</span><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none"> </span><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">Companies can see
+                                        the details of the car like the maintenance history, how many parts are
+                                        duplicated, and all the other details that can help the company get the right
+                                        amount of insurance premium that they can charge the
+                                        user.</span><br><br><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Preferences
+                                        :</span><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none"> </span><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">They should be
+                                        able to use the system on desktop and be able to enter the details of a car from
+                                        a keyboard. The website can also be run on mobile so that users can use it using
+                                        their mobile. They can see all the details of the car that they searched for and
+                                        also in good format, so it is easy to read. They can extract and download the
+                                        data in such a format that it is easy for the analyst to analyse the insurance
+                                        premium they can charge.</span></td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0pky"><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Repair
+                                        shops</span></td>
+                                <td class="tg-0pky"><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Background :
+                                    </span><br><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">comfortable with
+                                        both mobile and web-based applications and is conversant with computers and
+                                        smartphones.</span><br><br><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Expectations
+                                        :</span><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none"> </span><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">The repair shop
+                                        owner can see the data associated with that car and also update the data of the
+                                        car by using the system so that the data is correct.</span><br><br><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Preferences :
+                                    </span><br><span style="font-weight:400;font-style:normal;text-decoration:none">They
+                                        should be able to use the system on a desktop and be able to enter the details
+                                        of a car from a keyboard. The website can also be run on mobile so that users
+                                        can use it on the go. can see the data associated with the car and also update
+                                        the data with what they have repaired or changed with ease.</span></td>
+                            </tr>
+                            <tr>
+                                <td class="tg-0pky"><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Automobile
+                                        Manufaturing Companies</span></td>
+                                <td class="tg-0pky"><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Background :
+                                    </span><br><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">comfortable with
+                                        both mobile and web-based applications and being conversant with computers and
+                                        smartphones.</span><br><br><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Expectations :
+                                    </span><br><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">Automobile
+                                        manufacturing employees should be able to enter the information about a car
+                                        model and then be able to see the details regarding the parts that are being
+                                        worn out the most.</span><br><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none">Preferences
+                                        :</span><br><span
+                                        style="font-weight:700;font-style:normal;text-decoration:none"> </span><span
+                                        style="font-weight:400;font-style:normal;text-decoration:none">They should be
+                                        able to use the system on desktop and can enter the details of a car from a
+                                        keyboard. The website should also be able to run on mobile so that they can use
+                                        it while on the go. can see the data associated with the car of a particular
+                                        model in order to get the details about its parts.</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+
+                <div style="display: flex; justify-content: space-between">
+                    <a href="useCases.html">Previous: Use Cases</a>
+                    <a href="highLevelDesign.html">Next: High-Level Design</a>
+                </div>
+
+            </div>
+        </main>
+</body>
+
+</html>
